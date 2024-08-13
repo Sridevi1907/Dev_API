@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Form Submitted</title>
+    <style>
+        body {
+            background-color: lightblue;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+
+        h1 {
+            color: navy;
+        }
+
+        p {
+            margin: 10px 0;
+        }
+
+        form {
+            display: inline-block;
+            margin-top: 20px;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Below Data Submitted</h1>
+    <p>First Name: {{document.first_name}}</p>
+    <p>Last Name: {{document.last_name}}</p>
+    <p>Date of Birth: {{document.dob}}</p>
+    <p>City: {{document.city}}</p>
+    <p>State: {{document.state}}</p>
+    <p>Country: {{document.country}}</p>
+
+    <form action="/edit/{{document._id}}" method="get">
+        <input type="submit" value="Edit">
+    </form>
+    <form action="/delete/{{document._id}}" method="post">
+        <input type="submit" value="Delete">
+    </form>
+</body>
+</html>

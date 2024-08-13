@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Register Yourself</title>
+</head>
+<body>
+    <h1> Register Yourself</h1>
+    <form action='/submit_form/{{ id if data else "" }}' method='post'>
+        <label for='fname'>First Name</label>
+        <input type='text' id='fname' name='fname' value='{{data.fname if data}}'><br> <br>
+        <label for='lname'>Last Name</label>
+        <input type='text' id='lname' name='lname' value='{{data.lname if data}}'><br><br>
+        <label for='DOB'>Date Of Birth</label>
+        <input type='date' id='DOB' name='DOB' value='{{data.DOB if data}}'><br><br>
+        <label for='city'>City</label>
+        <input type='text' id='city' name='city' value='{{data.city if data}}'><br><br>
+        <label for='state'>State</label>
+        <input type='text' id='state' name='state' value='{{data.state if data}}'><br><br>
+        <label for='country'>Country</label>
+        <input type='text' id='country' name='country' value='{{data.country if data}}'><br>
+        <input type='submit' value='Submit'>
+        {% if data %}
+            <input type='hidden' name='update' value='1'>
+
+        {% endif %}
+
+    </form>
+    
+</body>
+</html>

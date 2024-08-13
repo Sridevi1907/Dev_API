@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <title>Details Updated</title>
+        <style>
+            body {
+                background-color: lightcyan;
+                font-family: Arial, sans-serif;
+                text-align: center;
+                margin: 20px;
+            }
+
+            h1 {
+                color: #4CAF50;
+            }
+
+            p {
+                margin: 10px 0;
+            }
+        </style>
+    </head>
+    <body>
+<!--        <h1>Details Updated</h1>-->
+        <p>{{message}}</p>
+        <p> Would you like to see the records?</p>
+        <form action="/list_documents" method="get">
+            <input type="submit", value="list_documents">
+        </form>
+    </body>
+</html>
